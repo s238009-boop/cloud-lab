@@ -1,0 +1,13 @@
+services:
+  backend:
+    image: nguyenquocvuong238009/mern-backend:1.0
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGODB_URI=mongodb+srv://Vuong:238009@cluster0.y3djx37.mongodb.net/mern_db?retryWrites=true&w=majority&appName=Cluster0
+  frontend:
+    image: nguyenquocvuong238009/mern-frontend:1.0
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
